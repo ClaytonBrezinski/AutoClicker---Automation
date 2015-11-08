@@ -431,6 +431,7 @@ def goToCategories():
 	        Video(pos[4], 260, "get the right wedding cake"),
 	        Video(pos[5], 525, "some people shouldn't get married"))
 
+
 	careersCategory = Category("Careers", Cord.catCareers, car)
 	comedyCategory = Category("Comedy", Cord.catComedy, com)
 	fashionCategory = Category("Fashion", Cord.catFashion, fas)
@@ -471,7 +472,6 @@ def goToCategories():
 			watchCategory(videoCategory[i].returnTotalVideos, videoCategory[i], videoCategory[i].exposeVideos)
 			videoCategory[i].categoryIsFinished()
 			watchedCategories += 1
-
 	addCareersCategory = Category("Careers", Cord.catCareers, aCar)
 	#addComedyCategory = Category("Comedy", Cord.catComedy, aDom)
 	addFashionCategory = Category("Fashion", Cord.catFashion, aFas)
@@ -492,6 +492,9 @@ def goToCategories():
 						addHealthCategory, addHomeAndGardenCategory, addParentingCategory,
 						addPersonalFinanceCategory,addPetsAndAnimalsCategory,
 						addTechnologyCategory,addTravelCategory,addWeddingCategory)
+
+	p = Popen("ScreenShot.bat", cwd=r"C:\Users\Dolan\Dropbox\SwagbucksAutomation\Home Desktop\Screenshots")
+	stdout, stderr = p.communicate()
 
 	sleepTimer = random.randint(0, 600)
 	sleep(sleepTimer)
@@ -514,7 +517,7 @@ def goToCategories():
 			print "working in: " + videoCategory[i].returnCategory
 			watchCategory(videoCategory[i].returnTotalVideos, videoCategory[i], videoCategory[i].exposeVideos)
 			videoCategory[i].categoryIsFinished()
-			watchedCategories += 1
+			watchedAdditionalCategories += 1
 
 #### - Main - ####
 def main():

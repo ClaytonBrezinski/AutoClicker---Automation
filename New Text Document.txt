@@ -1,0 +1,40 @@
+careersCategory = Category("Careers", Cord.catCareers, car)
+	comedyCategory = Category("Comedy", Cord.catComedy, com)
+	fashionCategory = Category("Fashion", Cord.catFashion, fas)
+	fitnessCategory = Category("Fitness", Cord.catFitness, fit)
+	healthCategory = Category("Health", Cord.catHealth, hea)
+	homeAndGardenCategory = Category("Home And Garden", Cord.catHomeAndGarden, hom)
+	newsAndPoliticsCategory = Category("News And Politics", Cord.catNewsAndPolitics, new)
+	parentingCategory = Category("Parenting", Cord.catParenting, par)
+	personalFinanceCategory = Category("Personal Finance", Cord.catPersonalFinance, per)
+	petsAndAnimalsCategory = Category("Pets And Animals", Cord.catPetsAndAnimals, pet)
+	shoppingCategory = Category("Shopping", Cord.catShopping, sho)
+	sportsCategory = Category("Sports", Cord.catSports, spo)
+	technologyCategory = Category("Technology", Cord.catTechnology, tec)
+	travelCategory = Category("Travel", Cord.catTravel, tra)
+	weddingCategory = Category("Wedding", Cord.catWedding, wed)
+
+	videoCategory = (careersCategory, comedyCategory, fashionCategory, fitnessCategory,
+					 healthCategory, homeAndGardenCategory, newsAndPoliticsCategory,
+					 parentingCategory, personalFinanceCategory, petsAndAnimalsCategory,
+					 shoppingCategory, sportsCategory, technologyCategory, travelCategory,
+					 weddingCategory)
+	watchedCategories = 0
+	while watchedCategories < NUM_OF_CATEGORIES:
+		#Generate random number for I
+		upperBound = NUM_OF_CATEGORIES - 1
+		i = random.randint(0, upperBound)
+		#If the category has been watched
+		while videoCategory[i].isCategoryFinished == True:
+			if i >= NUM_OF_CATEGORIES:
+				break
+			else:
+				if i >= upperBound:
+					break
+				i += 1
+
+		if videoCategory[i].isCategoryFinished == False:
+			print "working in: " + videoCategory[i].returnCategory
+			watchCategory(videoCategory[i].returnTotalVideos, videoCategory[i], videoCategory[i].exposeVideos)
+			videoCategory[i].categoryIsFinished()
+			watchedCategories += 1
