@@ -12,6 +12,8 @@ import random
 from random import randint
 import webbrowser
 from subprocess import Popen
+import time
+import pyscreenshot as ImageGrab
 
 # ---Globals---
 # Number of Categories
@@ -289,8 +291,8 @@ def goToCategories():
 	         Video(pos[7], 330, "school dinners are hit and miss"),
 	         Video(pos[15], 620, "stealing gets you nowhere"))
 
-	com = ( Video(pos[4], 380, "top 10 fun facts - comedians"),
-			Video(pos[6], 500, "some burglars are extra stupid"),
+	com = ( Video(pos[5], 380, "top 10 fun facts - comedians"),
+			Video(pos[2], 500, "some burglars are extra stupid"),
 			Video(pos[7], 575, "comedy time 4"),
 			Video(pos[8], 620, "comedy time 3"),
 			Video(pos[9], 450, "comedy time 2"),
@@ -298,23 +300,23 @@ def goToCategories():
 			Video(pos[11], 230, "marijuana gets hidden in odds places"))
 	#aCom = ( Video(pos[4], 230, ""))
 
-	fas = ( Video(pos[12], 145, "buying shoes is never straightforward"),
-			Video(pos[16], 315, "got your valentines day lingerie"))
+	fas = ( Video(pos[15], 145, "buying shoes is never straightforward"),
+			Video(pos[14], 315, "got your valentines day lingerie"))
 	aFas = (Video(pos[7], 330, "women's style in mimi ..."),
 	        Video(pos[9], 400, "get your handbag"),
 	        Video(pos[10], 410, "are you wearing your bra correctly?"),
 	        Video(pos[11], 410, "weird shoes"),
 	        Video(pos[17], 460, "wardrobe tips"))
 
-	fit = ( Video(pos[9], 300, "cycling is good for you"),
-			Video(pos[10], 825, "fitness through sensual dance"),
-			Video(pos[16], 585, "women's self-defense"))
+	fit = ( Video(pos[7], 300, "cycling is good for you"),
+			Video(pos[8], 825, "fitness through sensual dance"),
+			Video(pos[14], 585, "women's self-defense"))
 	aFit = (Video(pos[15], 260, "kundalini yoga"),
 			Video(pos[16], 585, "women's self-defense"))
 
-	hea = ( Video(pos[4], 230, "cannibalism really occurs"),
-	        Video(pos[9], 230, "get some sleep"),
-			Video(pos[12], 275, "what does your meat eat"),
+	hea = ( Video(pos[7], 230, "cannibalism really occurs"),
+	        Video(pos[12], 230, "get some sleep"),
+			Video(pos[16], 275, "what does your meat eat"),
 			Video(pos[15], 820, "brain science"),
 	        Video(pos[17], 260, "how to avoid over eating"))
 	aHea = (Video(pos[5], 520, "unorthodox prosthetics"),
@@ -324,12 +326,12 @@ def goToCategories():
 	        Video(pos[10], 330, "do you want plastic surgery"),
 	        Video(pos[14], 330, "how to ruin your brain"))
 
-	hom = ( Video(pos[5], 520, " weird chairs"),
-			Video(pos[8], 70, "10 sec tips - in the home"),
-			Video(pos[9], 70, "10 sec tips - outside"),
-			Video(pos[10], 270, "10 sec tips - DIY"),
-			Video(pos[12], 260, "careful with your laundry"),
-			Video(pos[13], 260, "apartment stories"))
+	hom = ( Video(pos[12], 520, " weird chairs"),
+			Video(pos[15], 70, "10 sec tips - in the home"),
+			Video(pos[16], 70, "10 sec tips - outside"),
+			Video(pos[17], 270, "10 sec tips - DIY"),
+			Video(pos[2], 260, "careful with your laundry"),
+			Video(pos[6], 260, "apartment stories"))
 	aHom = (Video(pos[3], 330, "helpful home hacks"),
 	        Video(pos[4], 330, "the triffids are coming"),
 	        Video(pos[6], 330, "with neighbors like these"))
@@ -340,20 +342,20 @@ def goToCategories():
 			Video(pos[3], 70, "politician's fun facts"),
 			Video(pos[4], 530, "people getting arrested for the oddest things"),
 			Video(pos[5], 270, "unusual news"),
-			Video(pos[6], 140, "Obama and the White House"),
+			Video(pos[6], 160, "Obama and the White House"),
 			Video(pos[7], 270, "quirky news"),
 			Video(pos[8], 300, "news from around the world"),
 			Video(pos[9], 280, "pulse on China"))
 
-	par = ( Video(pos[0], 140, "buy Hannah Montana DVDs"),
-			Video(pos[1], 240, "you affect your child's development"),
-			Video(pos[7], 220, "caring for a newborn"),
-			Video(pos[5], 340, "probably don't do these things"),
-			Video(pos[11], 260, "teenagers"),
-			Video(pos[12], 260, "kid troubles"),
-			Video(pos[13], 200, "parenting tips"))
-	aPar = (Video(pos[2], 400, "dress your girl"),
-	        Video(pos[3], 330, "dress your boy"),
+	par = ( Video(pos[3], 140, "buy Hannah Montana DVDs"),
+			Video(pos[4], 240, "you affect your child's development"),
+			Video(pos[10], 220, "caring for a newborn"),
+			Video(pos[8], 340, "probably don't do these things"),
+			Video(pos[14], 260, "teenagers"),
+			Video(pos[15], 260, "kid troubles"),
+			Video(pos[16], 200, "parenting tips"))
+	aPar = (Video(pos[5], 400, "dress your girl"),
+	        Video(pos[6], 330, "dress your boy"),
 	        Video(pos[8], 260, "breastfeeding issues"),
 	        Video(pos[9], 330, "changing diapers"))
 
@@ -377,9 +379,9 @@ def goToCategories():
 			Video(pos[9], 260, "donkeys get it left, right, and center"),
 	        Video(pos[15], 260, "horses do the darndest things"))
 	aPet =( Video(pos[2], 380, "big cats"),
-	        Video(pos[3], 330, "whales are endangered"),
+	        Video(pos[3], 350, "whales are endangered"),
 	        Video(pos[5], 260, "monkey' are great"),
-	        Video(pos[6], 500, "snakes on planes"),
+	        Video(pos[6], 520, "snakes on planes"),
 	        Video(pos[7], 330, "bear news"),
 	        Video(pos[8], 330, "cows are funny creatures"),
 	        Video(pos[10], 330, "leave that kitten alone"),
@@ -394,14 +396,14 @@ def goToCategories():
 			Video(pos[4], 330, "Craigslist offers some odd deals"),
 			Video(pos[5], 260, "interesting products"))
 
-	spo = ( Video(pos[0], 720, "interesting products"),
-			Video(pos[1], 330, "some facts from the london olympics"))
+	spo = ( Video(pos[1], 720, "interesting products"),
+			Video(pos[2], 330, "some facts from the london olympics"))
 
-	tec = ( Video(pos[3], 520, "james bond 007 video games"),
-			Video(pos[4], 260, "how do you deal with email?"),
-			Video(pos[8], 410, "weird tales from outer space"),
-			Video(pos[10], 410, "wifi news"),
-			Video(pos[12], 140, "expensive cars"),
+	tec = ( Video(pos[4], 520, "james bond 007 video games"),
+			Video(pos[5], 260, "how do you deal with email?"),
+			Video(pos[9], 410, "weird tales from outer space"),
+			Video(pos[11], 410, "wifi news"),
+			Video(pos[13], 140, "expensive cars"),
 			Video(pos[13], 210, "video games have their uses"),
 			Video(pos[14], 150, "check out this BMX gaming"),
 			Video(pos[15], 260, "cool stuff happens on twitter"))
@@ -423,14 +425,13 @@ def goToCategories():
 	        Video(pos[12], 565, "go down under"),
 	        Video(pos[15], 400, "visit bangkok"))
 	#,Video(pos[16], 330, "fun facts special places")
-	wed = ( Video(pos[6], 260, "wedding ring difficulties"),
-			Video(pos[7], 260, "wedding disasters"),
-			Video(pos[1], 230, "wedding-oriented movies"))
+	wed = ( Video(pos[7], 260, "wedding ring difficulties"),
+			Video(pos[8], 260, "wedding disasters"),
+			Video(pos[2], 230, "wedding-oriented movies"))
 	aWed = (Video(pos[2], 260, "wedding jewelery"),
 	        Video(pos[3], 260, "where did you give birth?"),
 	        Video(pos[4], 260, "get the right wedding cake"),
 	        Video(pos[5], 525, "some people shouldn't get married"))
-
 
 	careersCategory = Category("Careers", Cord.catCareers, car)
 	comedyCategory = Category("Comedy", Cord.catComedy, com)
@@ -472,6 +473,7 @@ def goToCategories():
 			watchCategory(videoCategory[i].returnTotalVideos, videoCategory[i], videoCategory[i].exposeVideos)
 			videoCategory[i].categoryIsFinished()
 			watchedCategories += 1
+
 	addCareersCategory = Category("Careers", Cord.catCareers, aCar)
 	#addComedyCategory = Category("Comedy", Cord.catComedy, aDom)
 	addFashionCategory = Category("Fashion", Cord.catFashion, aFas)
@@ -488,15 +490,16 @@ def goToCategories():
 	addTravelCategory = Category("Travel", Cord.catTravel, aTra)
 	addWeddingCategory = Category("Wedding", Cord.catWedding, aWed)
 
-	additionalVideos = (addCareersCategory, addFashionCategory, addFitnessCategory,
+	additionalVideoCategory = (addCareersCategory, addFashionCategory, addFitnessCategory,
 						addHealthCategory, addHomeAndGardenCategory, addParentingCategory,
 						addPersonalFinanceCategory,addPetsAndAnimalsCategory,
 						addTechnologyCategory,addTravelCategory,addWeddingCategory)
 
-	p = Popen("ScreenShot.bat", cwd=r"C:\Users\Dolan\Dropbox\SwagbucksAutomation\Home Desktop\Screenshots")
-	stdout, stderr = p.communicate()
+	filePrintout = time.strftime("%dI%mI%Y") + '.png'
+	ImageGrab.grab_to_file(filePrintout)
 
 	sleepTimer = random.randint(0, 600)
+	print "sleeping for: " + sleepTimer
 	sleep(sleepTimer)
 	watchedAdditionalCategories = 0
 	print "in Additional Area"
@@ -505,7 +508,7 @@ def goToCategories():
 		upperBoundA = NUM_OF_ADDITIONAL_CATEGORIES - 1
 		i = random.randint(0, upperBoundA)
 		#If the category has been watched
-		while videoCategory[i].isCategoryFinished == True:
+		while additionalVideoCategory[i].isCategoryFinished == True:
 			if i >= NUM_OF_ADDITIONAL_CATEGORIES:
 				break
 			else:
@@ -513,27 +516,31 @@ def goToCategories():
 					break
 				i += 1
 
-		if videoCategory[i].isCategoryFinished == False:
-			print "working in: " + videoCategory[i].returnCategory
-			watchCategory(videoCategory[i].returnTotalVideos, videoCategory[i], videoCategory[i].exposeVideos)
-			videoCategory[i].categoryIsFinished()
+		if additionalVideoCategory[i].isCategoryFinished == False:
+			print "working in: " + additionalVideoCategory[i].returnCategory
+			watchCategory(additionalVideoCategory[i].returnTotalVideos, additionalVideoCategory[i], additionalVideoCategory[i].exposeVideos)
+			additionalVideoCategory[i].categoryIsFinished()
 			watchedAdditionalCategories += 1
 
 #### - Main - ####
 def main():
-	# A = randint(200,360)
-	# if A %3 == 0:
-	# 	A = randint(420,1080)
-	# 	print A
-	# 	sleep(A)
-	# elif A%3 == 1:
-	# 	A = randint(1080,1440)
-	# 	print A
-	# 	sleep(A)
-	# else:
-	# 	A = randint(1440,1640)
-	# 	print A
-	# 	sleep(A)
+	#A = randint(200,360)
+	#if A %3 == 0:
+	#	A = randint(420,1080)
+	#	print A
+	#	sleep(A)
+	#elif A%3 == 1:
+	#	A = randint(1080,1440)
+	#	print A
+	#	sleep(A)
+	#else:
+	#	A = randint(1440,1640)
+	#	print A
+	#print "sleeping for: " + A;
+	filePrintout = time.strftime("%dI%mI%Y") + "III" + time.strftime("%HI%MI%S") + '.png'
+	ImageGrab.grab_to_file(filePrintout)
+	#sleep(A)
+
 
 	webbrowser.get("firefox").open("www.swagbucks.com")
 	print "hi"
@@ -542,9 +549,8 @@ def main():
 	leftClick()
 	goToCategories()
 	##########################################################
-	p = Popen("ScreenShot.bat", cwd=r"C:\Users\Dolan\Dropbox\Swagbucks automation\Home Desktop\Screenshots")
-	stdout, stderr = p.communicate()
-
+	filePrintout = time.strftime("%dI%mI%Y") + "III" + time.strftime("%HI%MI%S") + '.png'
+	ImageGrab.grab_to_file(filePrintout)
 
 if __name__ == '__main__':
 	main()
