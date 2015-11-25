@@ -499,7 +499,7 @@ def goToCategories():
 	ImageGrab.grab_to_file(filePrintout)
 
 	sleepTimer = random.randint(0, 600)
-	print "sleeping for: " + sleepTimer
+	print "sleeping for: ",  sleepTimer
 	sleep(sleepTimer)
 	watchedAdditionalCategories = 0
 	print "in Additional Area"
@@ -524,19 +524,19 @@ def goToCategories():
 
 #### - Main - ####
 def main():
-	#A = randint(200,360)
-	#if A %3 == 0:
-	#	A = randint(420,1080)
-	#	print A
-	#	sleep(A)
-	#elif A%3 == 1:
-	#	A = randint(1080,1440)
-	#	print A
-	#	sleep(A)
-	#else:
-	#	A = randint(1440,1640)
-	#	print A
-	#print "sleeping for: " + A;
+	A = randint(200,360)
+	if A %3 == 0:
+		A = randint(420,1080)
+		print A
+		sleep(A)
+	elif A%3 == 1:
+		A = randint(1080,1440)
+		print A
+		sleep(A)
+	else:
+		A = randint(1440,1640)
+		print A
+	print "sleeping for: ",  A;
 	filePrintout = time.strftime("%dI%mI%Y") + "III" + time.strftime("%HI%MI%S") + '.png'
 	ImageGrab.grab_to_file(filePrintout)
 	#sleep(A)
